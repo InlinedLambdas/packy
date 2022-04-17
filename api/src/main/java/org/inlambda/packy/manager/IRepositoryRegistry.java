@@ -31,9 +31,25 @@ import java.util.Collection;
  */
 @ApiStatus.AvailableSince("0.1.0")
 public interface IRepositoryRegistry {
+    /**
+     * Get the local repository
+     *
+     * @return the local repository
+     */
     IRepository getLocalRepository();
 
+    /**
+     * Get remote repositories.
+     *
+     * @return
+     */
     Collection<? extends IRepositoryClient> getRemoteRepositories();
 
+    /**
+     * Add a remote repository.
+     * This also performs keyring update.
+     *
+     * @param repository the repository to add
+     */
     void addRemoteRepository(IRepositoryClient repository);
 }
