@@ -18,21 +18,22 @@
  *   USA
  */
 
-package org.inlambda.packy;
+package org.inlambda.packy.manager;
 
-import org.inlambda.packy.manager.IPackageManager;
+import org.inlambda.packy.repo.IRepository;
+import org.inlambda.packy.repo.sync.IRepositoryClient;
 import org.jetbrains.annotations.ApiStatus;
 
+import java.util.Collection;
+
 /**
- * Packy service.
+ * A registry for repositories.
  */
 @ApiStatus.AvailableSince("0.1.0")
-public interface IPackyService {
-    /**
-     * Get the default package manager
-     *
-     * @return package manager
-     */
-    IPackageManager getPackageManager();
+public interface IRepositoryRegistry {
+    IRepository getLocalRepository();
 
+    Collection<? extends IRepositoryClient> getRemoteRepositories();
+
+    void addRemoteRepository(IRepositoryClient repository);
 }

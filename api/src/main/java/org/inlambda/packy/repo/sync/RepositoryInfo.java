@@ -18,21 +18,31 @@
  *   USA
  */
 
-package org.inlambda.packy;
+package org.inlambda.packy.repo.sync;
 
-import org.inlambda.packy.manager.IPackageManager;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.ApiStatus;
 
+import java.nio.file.Path;
+
 /**
- * Packy service.
+ * The metadata of a repository
  */
 @ApiStatus.AvailableSince("0.1.0")
-public interface IPackyService {
+@RequiredArgsConstructor
+@Getter
+public final class RepositoryInfo {
     /**
-     * Get the default package manager
-     *
-     * @return package manager
+     * Who is maintaining this repository?
      */
-    IPackageManager getPackageManager();
-
+    private final String maintainer;
+    /**
+     * The name of the repository
+     */
+    private final String name;
+    /**
+     * Path to GPG Keyring
+     */
+    private final Path keyring;
 }

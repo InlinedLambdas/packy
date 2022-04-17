@@ -73,4 +73,11 @@ public interface IRepositoryClient {
     default Multi<? extends PackageRecord> findInRange(String name, @NotNull String versionDsl) {
         return findByName(name).filter(e -> e.getVersion().satisfies(versionDsl));
     }
+
+    /**
+     * Self introduction of the repository.
+     *
+     * @return
+     */
+    RepositoryInfo getInfo();
 }
