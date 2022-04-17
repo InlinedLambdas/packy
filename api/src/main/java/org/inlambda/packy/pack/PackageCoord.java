@@ -18,7 +18,7 @@
  *   USA
  */
 
-package org.inlambda.packy;
+package org.inlambda.packy.pack;
 
 import com.github.zafarkhaja.semver.Version;
 import lombok.AccessLevel;

@@ -20,7 +20,7 @@
 
 package org.inlambda.packy.exceptions;
 
-import org.inlambda.packy.PackageCoord;
+import org.inlambda.packy.pack.PackageCoord;
 
 public class PackageDuplicatedException extends PackageException {
     public PackageDuplicatedException(PackageCoord packageCoord) {

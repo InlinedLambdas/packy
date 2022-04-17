@@ -22,6 +22,8 @@ package org.inlambda.packy;
 
 import com.github.zafarkhaja.semver.Version;
 import org.inlambda.packy.exceptions.PackageDuplicatedException;
+import org.inlambda.packy.pack.PackageCoord;
+import org.inlambda.packy.pack.PackageRecord;
 import org.jetbrains.annotations.ApiStatus;
 
 import java.util.Collection;

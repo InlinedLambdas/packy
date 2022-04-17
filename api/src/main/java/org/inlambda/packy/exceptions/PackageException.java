@@ -20,7 +20,7 @@
 
 package org.inlambda.packy.exceptions;
 
-import org.inlambda.packy.PackageCoord;
+import org.inlambda.packy.pack.PackageCoord;
 
 /**
  * This kind of exceptions are thrown for failure in package operations.

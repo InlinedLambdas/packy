@@ -18,12 +18,13 @@
  *   USA
  */
 
-package org.inlambda.packy;
+package org.inlambda.packy.pack;
 
 import com.github.zafarkhaja.semver.Version;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.inlambda.packy.IRepository;
 import org.inlambda.packy.pack.metadata.PackageMeta;
 import org.inlambda.packy.pack.metadata.VersionMeta;
 import org.jetbrains.annotations.ApiStatus;

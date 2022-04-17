@@ -20,7 +20,7 @@
 
 package org.inlambda.packy.exceptions;
 
-import org.inlambda.packy.PackageCoord;
+import org.inlambda.packy.pack.PackageCoord;
 import org.inlambda.packy.security.ValidationType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

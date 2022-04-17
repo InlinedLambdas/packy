@@ -21,7 +21,6 @@
 package org.inlambda.packy.pack;
 
 import lombok.RequiredArgsConstructor;
-import org.inlambda.packy.PackageCoord;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Nullable;
 
