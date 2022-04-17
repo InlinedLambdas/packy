@@ -20,60 +20,16 @@
 
 package org.inlambda.packy.repo;
 
-import com.github.zafarkhaja.semver.Version;
 import org.inlambda.packy.exceptions.PackageDuplicatedException;
-import org.inlambda.packy.pack.PackageCoord;
 import org.inlambda.packy.pack.PackageRecord;
+import org.inlambda.packy.repo.sync.IRepositoryClient;
 import org.jetbrains.annotations.ApiStatus;
-
-import java.util.Collection;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * A repository tracks or sync changes for packages, allowing clients to read its contents.
  */
 @ApiStatus.AvailableSince("0.1.0")
-public interface IRepository {
-    /**
-     * Find packages by their name. {@link PackageRecord}
-     *
-     * @param name name of packages
-     * @return a collection of package records or empty set
-     */
-    Collection<? extends PackageRecord> findByName(String name);
-
-    /**
-     * Find a package by its name and version. Sorted by version
-     *
-     * @param name    name of package
-     * @param version version of package
-     * @return a package record or {@link Optional#empty()}
-     */
-    Optional<? extends PackageRecord> findExactly(String name, Version version);
-
-    /**
-     * As same as {@link #findExactly(String, Version)}, but for {@link PackageCoord}
-     *
-     * @param coordinate coord of package
-     * @return a package record or {@link Optional#empty()}
-     */
-    default Optional<? extends PackageRecord> findExactly(PackageCoord coordinate) {
-        return findExactly(coordinate.getName(), coordinate.getVersion());
-    }
-
-    /**
-     * Find packages with a name and a range of version. Sorted by version
-     *
-     * @param name       name of the package
-     * @param versionDsl See <a href="https://github.com/zafarkhaja/jsemver#external-dsl">https://github.com/zafarkhaja/jsemver#external-dsl</a>
-     * @return a collection of package records
-     */
-    default Collection<? extends PackageRecord> findInRange(String name, String versionDsl) {
-        return findByName(name).stream()
-                .filter(e -> e.getVersion().satisfies(versionDsl))
-                .collect(Collectors.toUnmodifiableList());
-    }
+public interface IRepository extends IRepositoryClient {
 
     /**
      * Add a record into repository.
