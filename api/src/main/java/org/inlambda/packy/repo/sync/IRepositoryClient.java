@@ -26,6 +26,8 @@ import io.smallrye.mutiny.Uni;
 import org.inlambda.packy.pack.PackageCoord;
 import org.inlambda.packy.pack.PackageRecord;
 import org.jetbrains.annotations.ApiStatus;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
@@ -49,7 +51,7 @@ public interface IRepositoryClient {
      * @param version version of package
      * @return a package record or {@link Optional#empty()}
      */
-    Uni<? extends PackageRecord> findExactly(String name, Version version);
+    Uni<? extends PackageRecord> findExactly(String name, @Nullable Version version);
 
     /**
      * As same as {@link #findExactly(String, Version)}, but for {@link PackageCoord}
@@ -68,7 +70,7 @@ public interface IRepositoryClient {
      * @param versionDsl See <a href="https://github.com/zafarkhaja/jsemver#external-dsl">https://github.com/zafarkhaja/jsemver#external-dsl</a>
      * @return a collection of package records
      */
-    default Multi<? extends PackageRecord> findInRange(String name, String versionDsl) {
+    default Multi<? extends PackageRecord> findInRange(String name, @NotNull String versionDsl) {
         return findByName(name).filter(e -> e.getVersion().satisfies(versionDsl));
     }
 }

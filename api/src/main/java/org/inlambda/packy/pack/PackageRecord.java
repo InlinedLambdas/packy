@@ -41,6 +41,11 @@ import java.nio.file.Path;
 @EqualsAndHashCode
 @Getter
 public final class PackageRecord { // we don't use records for Java 11 compatibility
+
+    /**
+     * Is this record comes from remote?
+     */
+    private final boolean remote;
     /**
      * The location of the package, this can even be a URL.
      */
