@@ -24,9 +24,9 @@ import com.github.zafarkhaja.semver.Version;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.inlambda.packy.IRepository;
 import org.inlambda.packy.pack.metadata.PackageMeta;
 import org.inlambda.packy.pack.metadata.VersionMeta;
+import org.inlambda.packy.repo.IRepository;
 import org.jetbrains.annotations.ApiStatus;
 
 import java.nio.file.Path;

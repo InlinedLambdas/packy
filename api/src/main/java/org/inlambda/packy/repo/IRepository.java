@@ -18,7 +18,7 @@
  *   USA
  */
 
-package org.inlambda.packy;
+package org.inlambda.packy.repo;
 
 import com.github.zafarkhaja.semver.Version;
 import org.inlambda.packy.exceptions.PackageDuplicatedException;
